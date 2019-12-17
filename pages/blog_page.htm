@@ -1,0 +1,76 @@
+title = "Blog"
+url = "/blog/:slug"
+layout = "default"
+
+[blogPost]
+categoryFilter = "{{ :slug }}"
+==
+
+
+<section class="small-section bg-gray-lighter" style="margin-top: 75px; background-color: #f8f8f8;">
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">{{post.title}}</h1>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right">
+                    <a href="{{'home'|page}}">Home</a>&nbsp;/&nbsp;<span>Blog</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="page-section">
+    <div class="container relative">
+
+        <div class="row">
+
+            <!-- Content -->
+            <div class="col-sm-12">
+
+                <!-- Post -->
+                <div class="blog-item mb-80 mb-xs-40" style="max-width: 750px; margin: 0 auto;">
+
+                    <!-- Text -->
+                    <div class="blog-item-body">
+                        
+                        <h1 class="mt-0 font-alt">{{post.title}}</h1>
+
+                        <div class="lead">
+                            <p>
+                                {{post.excerpt}}
+                            </p>
+                        </div>
+                        <!-- End Text -->
+                        <!-- Media Gallery -->
+                        <div class="blog-media mt-40 mb-40 mb-xs-30">
+                                <ul class="clearlist content-slider">
+    
+                                    {% for image in post.featured_images %}
+                                        <li>
+                                            <img src="{{image.getPath()}}" alt="" />
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                        {{post.content_html|raw}}
+
+
+                    </div>
+                    <!-- End Text -->
+
+                </div>
+                <!-- End Post -->
+            </div>
+            <!-- End Content -->
+        </div>
+
+    </div>
+</section>

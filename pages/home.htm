@@ -1,0 +1,38 @@
+title = "Início"
+url = "/home"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[slideshows]
+sstheme = "borzoi"
+==
+<!-- Video Banner Home -->
+{% partial 'home/banner_video' %}
+
+<!-- About Section Home -->
+{% partial 'home/about' %}
+
+<!-- Ultomos Produtos -->
+{% partial 'home/ultimos_produtos' %}
+
+<!-- Slide Show -->
+{% partial 'home/slideshow' %}
+
+<!-- Blog Home -->
+{% partial 'home/blogs' %}
+
+<!-- NewsLetter Home -->
+{% partial 'home/newsletter' %}
+
+{% if false %}
+    <!-- Contact Form -->
+    {% partial 'site/contact' %}
+{% endif %}

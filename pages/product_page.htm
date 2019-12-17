@@ -1,0 +1,14 @@
+title = "Produto"
+url = "/produto/:id"
+layout = "default"
+
+[catalog]
+id = "{{:id}}"
+==
+
+
+{% partial 'product_page/header' %}
+
+{% partial 'product_page/product' %}
+
+{% partial 'product_page/produtos_relacionados' %}

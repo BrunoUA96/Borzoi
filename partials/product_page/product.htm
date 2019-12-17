@@ -1,0 +1,92 @@
+<!-- Section -->
+<section class="page-section">
+    <div class="container relative">
+
+        <!-- Product Content -->
+        <div class="row mb-60 mb-xs-30">
+
+            <!-- Product Images -->
+            <div class="col-md-4 col-md-offset-1 mb-md-30">
+
+                <div class="post-prev-img">
+                    <a href="{{ product.attachments.0.path }}" class="lightbox-gallery-3 mfp-image">
+                        <img src="{{ product.attachments.0.path }}" alt="" />
+                    </a>
+                    {% if product.sale > 0 %}
+                        <div class="intro-label">
+                            <span class="label label-danger bg-red">
+                                Sale
+                            </span>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="row">
+                    {% for image in product.attachments %}
+                        {% if image.getPath != product.attachments.0.path %}
+                            <div class="col-xs-3 post-prev-img">
+                                <a href="{{ image.getPath }}" class="lightbox-gallery-3 mfp-image">
+                                    <img src="{{ image.getPath }}" alt="" />
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!-- End Product Images -->
+
+            <!-- Product Description -->
+            <div class="col-sm-8 col-md-6 mb-xs-40">
+
+                <h3 class="mt-0">
+                    {{product.title}}
+                </h3>
+
+                <hr class="mt-0 mb-30" />
+
+                <div class="row">
+                    <div class="col-xs-6 lead mt-0 mb-20">
+                        {% if product.sale > 0 %}
+                            <del class="section-text">
+                                {{product.price}}
+                            </del>
+                            &nbsp;
+                            <strong>
+                                {{product.sale}}
+                            </strong>
+                        {% else %}
+                            <strong>
+                                {{product.price}}
+                            </strong>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                {% if product.prise > 0 %}
+                    <hr class="mt-0 mb-30" />
+                {% endif %}
+
+                <div class="section-text mb-30">
+                    {{product.description|raw}}
+                </div>
+
+                <hr class="mt-0 mb-30" />
+
+
+                <div class="mb-30">
+                    <form method="post" action="#" class="form">
+                        <a href="mailto:atelier@borzoidesign.com" target="_new" class="btn btn-mod btn-large btn-round">
+                            Encomendar
+                        </a>
+                    </form>
+                </div>
+
+            </div>
+            <!-- End Product Description -->
+
+        </div>
+        <!-- End Product Content -->
+    </div>
+</section>
+<!-- End Section -->

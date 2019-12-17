@@ -1,0 +1,41 @@
+ <!-- Section -->
+ <section class="page-section">
+     <div class="container relative">
+
+         <div class="row">
+
+             <!-- Content -->
+             <div class="col-sm-12">
+
+                 <div class="row multi-columns-row">
+
+                     <!-- Shop Item -->
+                    {% for product in catalog.getProducts %}
+                        {% partial 'site/item_card' product = product %}
+                    {% endfor %}
+                     <!-- End Shop Item -->
+
+                 </div>
+                 {% if false %}
+                 <!-- Pagination -->
+                 <div class="pagination">
+                     <a href=""><i class="fa fa-angle-left"></i></a>
+                     <a href="" class="active">1</a>
+                     <a href="">2</a>
+                     <a href="">3</a>
+                     <a class="no-active">...</a>
+                     <a href="">9</a>
+                     <a href=""><i class="fa fa-angle-right"></i></a>
+                 </div>
+                 <!-- End Pagination -->
+                 {% endif %}
+
+             </div>
+             <!-- End Content -->
+
+
+         </div>
+
+     </div>
+ </section>
+ <!-- End Section -->

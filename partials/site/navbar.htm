@@ -1,0 +1,83 @@
+<!-- Nav -->
+<!-- Navigation panel -->
+<nav class="main-nav dark transparent stick-fixed" {% if this.page.BaseFileName != 'home' %} style="background-color: #0033cc !important;" {% endif %}>
+    <div class="full-wrapper relative clearfix">
+        <!-- Logo ( * your text or image into link tag *) -->
+        <div class="nav-logo-wrap local-scroll">
+            <a href="
+                    {% if this.page.BaseFileName == 'home' %}  
+                        #top 
+                    {% else %} 
+                        {{'home'|page}}
+                    {% endif %}
+                " 
+            class="logo">
+                <img src="{{'assets/images/logo/logo-borzoi.png'|theme}}" alt="" />
+            </a>
+        </div>
+        <div class="mobile-nav">
+            <i class="fa fa-bars"></i>
+        </div>
+        <!-- Main Menu -->
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active">
+                    <a href="
+                            {% if this.page.BaseFileName == 'home' %}  
+                                #home 
+                            {% else %} 
+                                {{'home'|page}} 
+                            {% endif %}
+                        ">
+                        Início
+                    </a>
+                </li>
+                <li>
+                    <a href="
+                            {% if this.page.BaseFileName == 'home' %} 
+                                #about 
+                            {% else %} 
+                                {{'home'|page}}#about 
+                            {% endif %}
+                        ">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="
+                            {% if this.page.BaseFileName == 'home' %} 
+                                #bestsellers 
+                            {% else %} 
+                                {{'home'|page}}#bestsellers 
+                            {% endif %}
+                        ">
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="
+                            {% if this.page.BaseFileName == 'home' %} 
+                                #news 
+                            {% else %} 
+                                {{'home'|page}}#news 
+                            {% endif %}
+                        ">
+                        NOTÍCIAS
+                    </a>
+                </li>
+                <li>
+                    <a href="
+                            {% if this.page.BaseFileName == 'home' %} 
+                                #contact 
+                            {% else %} 
+                                {{'home'|page}}#contact 
+                            {% endif %}
+                        ">
+                        Contactos
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
