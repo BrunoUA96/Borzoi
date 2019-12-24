@@ -20,6 +20,32 @@ sstheme = "borzoi"
 <!-- About Section Home -->
 {% partial 'home/about' %}
 
+<!-- Parallax 1 -->
+<section class="page-section bg-dark bg-dark-alfa-90 fullwidth-slider" data-background="{{'assets/images/01.png'|theme}}" style="height: 387px;">
+        <div>
+            <div class="container relative">
+                <div class="row">
+                    <img src="" alt="">
+                    <div class="col-md-8 col-md-offset-2 align-center">
+                        {% if false %}
+                        <!-- Section Icon -->
+                        <div class="section-icon">
+                            <span class="icon-quote"></span>
+                        </div>
+                        <!-- Section Title --><h3 class="small-title font-alt">{{slide.titulo}}</h3>
+                        <blockquote class="testimonial white">
+                            <p>
+                                {{slide.subtitulo}}
+                            </p>
+                        </blockquote>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
 <!-- Ultomos Produtos -->
 {% partial 'home/ultimos_produtos' %}
 
