@@ -15,13 +15,13 @@ sstheme = "borzoi"
 
             <div class="col-md-8">
                 <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">
-                    Sobre
+                    {{'Sobre'|_}}
                 </h1>
             </div>
 
             <div class="col-md-4 mt-30">
                 <div class="mod-breadcrumbs font-alt align-right">
-                    <a href="{{'home'|page}}">Home</a>&nbsp;/&nbsp;<span>Sobre</span>
+                    <a href="{{'home'|page}}">Home</a>&nbsp;/&nbsp;<span>{{'Sobre'|_}}</span>
                 </div>
 
             </div>
@@ -42,21 +42,41 @@ sstheme = "borzoi"
                 <div class="row">
                     <div class="col-md-12 section-text">
                         <h2 class="section-title font-alt align-left">
-                            O BORZOI
+
                         </h2>
-                        O fascínio diário pela conjugação da prata com a mistura de outras matérias primas de qualidade
-                        "premium", traduzem-se num conceito criativo muito particular. Desta simbiose resultam objectos
-                        clássicos e intemporais. <br>
-                        Sempre e, com um forte propósito de idealizar peças de design contemporâneas, únicas e
-                        distintas, surgem "Os Meus Bichos", como lhes chamo. <br>
-                        Isto, foi o motor de arranque que fez irromper a marca: BORZOI DESIGN.
-                        O Borzoi, galgo russo eleito pela aristocracia russa, foi alvo de tentativa de extermínio pelo
-                        vínculo que tinha a esta elite no decurso da Revolução de 1917. Porém, sem êxito. <br>
-                        Levado, entretanto, para os E.U.A., passa a ser companhia das celebridades, destacando-se entre
-                        elas, Marilyn Monroe, Greta Garbo, Queen Catherine da Russia, Olivia de Havilland, Liberace.
-                        O glamour, a elegância, a classe, o requinte, o charme e a exclusividade que estão no ADN desta
-                        raça também estão impressos no ADN da marca BORZOI. E, assim, nasce o nome da marca, uma vez que
-                        são notórias as similitudes entre ambas.
+                        {% if activeLocale == 'pt' %}
+                            O fascínio diário pela conjugação da prata com a mistura de outras matérias primas de qualidade
+                            "premium", traduzem-se num conceito criativo muito particular. Desta simbiose resultam objectos
+                            clássicos e intemporais.
+                            <br><br>
+                            Sempre e, com um forte propósito de idealizar peças de design contemporâneas, únicas e
+                            distintas, surgem "Os Meus Bichos", como lhes chamo.
+                            <br><br>
+                            Isto, foi o motor de arranque que fez irromper a marca: BORZOI DESIGN.
+                            <br><br>
+                            O Borzoi, galgo russo eleito pela aristocracia russa, foi alvo de tentativa de extermínio pelo
+                            vínculo que tinha a esta elite no decurso da Revolução de 1917. Porém, sem êxito.
+                            <br><br>
+                            Levado, entretanto, para os E.U.A., passa a ser companhia das celebridades, destacando-se entre
+                            elas, Marilyn Monroe, Greta Garbo, Queen Catherine da Russia, Olivia de Havilland, Liberace.
+                            <br><br>
+                            O glamour, a elegância, a classe, o requinte, o charme e a exclusividade que estão no ADN desta
+                            raça também estão impressos no ADN da marca BORZOI. E, assim, nasce o nome da marca, uma vez que
+                            são notórias as similitudes entre ambas.
+                        {% else %}
+                            The exquisite combination of silver with other great quality premium materials creates a fascinating duality
+                            that turns into classical and timeless art objects.
+                            <br><br>
+                            With this in mind, and the enormous desire to create objects of singular and contemporary  design, I gave life to "My Beasts",  as I tenderly call them, and this was the beginning of the trade mark BORZOI DESIGN.
+                            <br><br>
+                            The Borzoi, also called the Russian wolfhound,  was a dog elected by the Russian aristocracy, including
+                            Catherine The Great, Empress of Russia and for that reason almost driven to extinction during the 1917 revolution.
+                             <br><br>
+                            Later it was taken to the USA and eventually adopted as cherished  companions of popular celebrities
+                            such as Greta Garbo, Olivia de Havilland, Marylin Moroe, Liberace.
+                            <br><br>
+                            Based on the glamour, elegance, class and the exquisite charm of this breed, we gave life to the Borzoi Trade Mark. 
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -78,10 +98,12 @@ sstheme = "borzoi"
         <div class="row multi-columns-row alt-features-grid">
 
             <!-- Features Item -->
-            <div class="col-md-12 page-section parallax-2" data-background="{{'assets/images/sobre/p-1.jpeg'|theme}}">
+            <div class="col-md-12 page-section parallax-2"
+                data-background="{{'assets/images/sobre/01_borzoi-091.jpg'|theme}}">
                 <div style="height: 400px;"></div>
             </div>
-            <div class="col-md-12 page-section parallax-2" data-background="{{'assets/images/sobre/p-2.jpeg'|theme}}">
+            <div class="col-md-12 page-section parallax-2"
+                data-background="{{'assets/images/sobre/02_borzoi-001.jpg'|theme}}">
                 <div style="height: 400px;"></div>
             </div>
 
@@ -92,18 +114,31 @@ sstheme = "borzoi"
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 section-text">
-                        Sempre com imensa vontade de acolher novos projectos, com disposição de inovar para crescer,
-                        alargar e expandir os seus horizontes, além das peças decorativas e, como meio de as
-                        complementar, lança-se também na área da Joalharia Portuguesa. <br>
-                        Da combinação do ouro com o múltiplo de pedras preciosas nos seus diversos formatos, sejam eles
-                        em: navetes, baguetes, carrès, entre outros, permite-lhe neste amplo universo de "cores" e
-                        "feitios", criar jóias com alma, sofisticadas, autênticas e funcionais. <br>
-                        Jóias que são a bandeira de uma marca que se pauta pela elegância atemporal e que distingue
-                        desde o primeiro momento  quem as usa. <br>
-                        É nas nossas oficinas tradicionais e pelas mãos dos artesãos, onde se privilegia todo um
-                        trabalho manual que, durante meses é realizado com toda a minúcia, destreza e sabedoria. Todo
-                        este duro processo produtivo é levado a cabo por estes homens que são a chave de ouro na
-                        execução da obra.
+                        {% if activeLocale == 'pt' %}
+                            Sempre com imensa vontade de acolher novos projectos, com disposição de inovar para crescer,
+                            alargar e expandir os seus horizontes, além das peças decorativas e, como meio de as
+                            complementar, lança-se também na área da Joalharia Portuguesa.
+                            <br><br>
+                            Da combinação do ouro com o múltiplo de pedras preciosas nos seus diversos formatos, sejam eles
+                            em: navetes, baguetes, carrés, entre outros, permite-lhe neste amplo universo de "cores" e
+                            "feitios", criar jóias com alma, sofisticadas, autênticas e funcionais.
+                            <br><br>
+                            Jóias que são a bandeira de uma marca que se pauta pela elegância atemporal e que distingue
+                            desde o primeiro momento  quem as usa.
+                            <br><br>
+                            É nas nossas oficinas tradicionais e pelas mãos dos artesãos, onde se privilegia todo um
+                            trabalho manual que, durante meses é realizado com toda a minúcia, destreza e sabedoria. Todo
+                            este duro processo produtivo é levado a cabo por estes homens que são a chave de ouro na
+                            execução da obra.
+                        {% else %}
+                            In addition to the decorative pieces and aiming to new projects, growing in innovation and  looking for new horizons, we now embrace the Portuguese Jewelry. 
+                            <br><br>
+                            The combination of gold with multiple precious stones in varied shapes such as navetes, baguetes, carrés, amongst others, allows  in the large universe of "colours" and "shapes" to create sophisticated, authentic and functional jewels with a soul, that distinguishes from the beginning 
+                            whoever wears them."
+                            <br><br>
+                            Its in our workshops, and made by experienced craftsmen who are the key for the quality and success of the jewels, where all the precise handwork is during months carried out, with knowledge
+                            and care.
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -114,10 +149,12 @@ sstheme = "borzoi"
         <div class="row multi-columns-row alt-features-grid" style="margin-top: 100px;">
 
             <!-- Features Item -->
-            <div class="col-md-12 page-section parallax-3" data-background="{{'assets/images/sobre/p-3.jpeg'|theme}}">
+            <div class="col-md-12 page-section parallax-3"
+                data-background="{{'assets/images/sobre/03_borzoi-098.jpg'|theme}}">
                 <div style="height: 400px;"></div>
             </div>
-            <div class="col-md-12 page-section parallax-3" data-background="{{'assets/images/sobre/p-4.jpeg'|theme}}">
+            <div class="col-md-12 page-section parallax-3"
+                data-background="{{'assets/images/sobre/04_borzoi-089.jpg'|theme}}">
                 <div style="height: 400px;"></div>
             </div>
 
@@ -127,13 +164,19 @@ sstheme = "borzoi"
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 section-text mt-50">
-                        Em sentido figurado a, Borzoi tem "raça", tem "cunho" e procura aportá-los às suas peças e obras
-                        de design. <br>
-                        A Borzoi visa ser uma mais-valia na decoração, trazendo harmonia, requinte e classe aos
-                        ambientes fazendo, assim, jus ao bom gosto. <br>
-                        Em suma: A Borzoi dirige-se e abraça todos os que se regem pelo primor e pelo que é chique, bem
-                        como todos aqueles que se pautam pelos valores de sensibilidade e que vivem eternamente
-                        apaixonados pelo BELO.
+                        {% if activeLocale == 'pt' %}
+                            Em sentido figurado a, Borzoi tem "raça", tem "cunho" e procura aportá-los às suas peças e obras
+                            de design.
+                            A Borzoi visa ser uma mais-valia na decoração, trazendo harmonia, requinte e classe aos
+                            ambientes fazendo, assim, jus ao bom gosto.
+                            <br><br>
+                            Em suma: A Borzoi dirige-se e abraça todos os que se regem pelo primor e pelo que é chique, bem
+                            como todos aqueles que se pautam pelos valores de sensibilidade e que vivem eternamente
+                            apaixonados pelo BELO.
+                        {% else %}
+                            BORZOI has breed and style, and aims to brand its mark of quality and design in decoration,
+                            creating elegance and harmony in any living environment.
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -148,11 +191,11 @@ sstheme = "borzoi"
 
         <div class="align-center">
             <h3 class="banner-heading font-alt" style="color: #111;">
-                Quer um projeto personalizado?
+                {{'Quer um projeto personalizado?'|_}}
             </h3>
             <div>
                 <a href="mailto:atelier@borzoidesign.com" target="_new" class="btn btn-mod  btn-medium btn-round">
-                    Fale Connosco
+                    {{'Fale Connosco'|_}}
                 </a>
             </div>
         </div>

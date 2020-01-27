@@ -3,7 +3,7 @@
     <div class="container relative">
 
         <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
-            Notícias
+            {{'Notícias'|_}}
         </h2>
 
         <div class="row multi-columns-row">
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="post-prev-title font-alt">
-                        <a href="">{{post.title}}</a>
+                        <a href="{{'blog_page'|page({slug: post.slug})}}">{{post.title}}</a>
                     </div>
 
                     <div class="post-prev-info font-alt">
@@ -32,7 +32,7 @@
 
                     <div class="post-prev-more">
                         <a href="{{'blog_page'|page({slug: post.slug})}}" class="btn btn-mod btn-gray btn-round">
-                            Ler Mais 
+                            {{'Ler Mais '|_}}
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </div>

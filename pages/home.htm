@@ -21,28 +21,51 @@ sstheme = "borzoi"
 {% partial 'home/about' %}
 
 <!-- Parallax 1 -->
-<section class="page-section bg-dark bg-dark-alfa-90 fullwidth-slider" data-background="{{'assets/images/01.png'|theme}}" style="height: 387px;">
-        <div>
-            <div class="container relative">
-                <div class="row">
-                    <img src="" alt="">
-                    <div class="col-md-8 col-md-offset-2 align-center">
-                        {% if false %}
-                        <!-- Section Icon -->
-                        <div class="section-icon">
-                            <span class="icon-quote"></span>
-                        </div>
-                        <!-- Section Title --><h3 class="small-title font-alt">{{slide.titulo}}</h3>
-                        <blockquote class="testimonial white">
-                            <p>
-                                {{slide.subtitulo}}
-                            </p>
-                        </blockquote>
-                        {% endif %}
+<style>
+    .fullwidth-slider-instagram {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .instagram_link_home {
+        border: 1px solid #ffffff57;
+        border-radius: 5px;
+        padding: 7px 50px !important;
+        font-size: 17px;
+        text-decoration: none !important;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+
+    .instagram_link_home:hover {
+        background-color: #0033cc;
+    }
+
+</style>
+<section class="page-section bg-dark bg-dark-alfa-90 fullwidth-slider-instagram"
+    data-background="{{'assets/images/borzoi-056.jpg'|theme}}" style="height: 387px;">
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+
+                    <!-- Section Icon -->
+                    <div class="section-icon">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
                     </div>
+                    <!-- Section Title -->
+                    <h3 class="small-title font-alt">
+                        @borzoidesign
+                    </h3>
+
+                    <a class="instagram_link_home" target="tab" href="https://www.instagram.com/borzoidesign/">
+                        {{'seguir'|_}}
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 
@@ -59,6 +82,6 @@ sstheme = "borzoi"
 {% partial 'home/newsletter' %}
 
 {% if false %}
-    <!-- Contact Form -->
-    {% partial 'site/contact' %}
+<!-- Contact Form -->
+{% partial 'site/contact' %}
 {% endif %}
