@@ -1,0 +1,39 @@
+title = "Produtos"
+url = "/produtos/:slug"
+layout = "default"
+
+[catalog]
+category = {{:slug}}
+
+==
+
+{% partial 'listagem_produtos/header' %}
+
+{% partial 'listagem_produtos/listagem' %}
+
+
+
+<!-- ************************ -->
+{% if false %}
+    <li>
+        <a href="{{'listagem_produtos'|page}}">todos</a>
+    </li>
+    
+    {% for category in categories %}
+
+        <li>
+            <a href="{{'listagem_produtos_category'|page({slug: category.slug})}}">
+                {{category.name}}
+            </a>
+            {% for subcategory in category.subcategories %}
+            <ul>
+                <li>
+                    <a href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
+                        {{subcategory.name}}
+                    </a>
+                </li>
+            </ul>
+            {% endfor %}
+        </li>
+    {% endfor %}
+{% endif %}

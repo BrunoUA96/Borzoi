@@ -1,41 +1,78 @@
- <!-- Section -->
- <section class="page-section">
-     <div class="container relative">
+<style>
+    .sidebar .widget-body .widget-menu a {
+        font-size: 14px;
+        padding-left: 7px;
+    }
 
+    .sidebar .widget-body .widget-menu .active {
+        display: block;
+        color: #fff;
+        background-color: #0033cc;
+        padding: 4px;
+    }
+</style>
+
+<!-- Section -->
+ <section class="page-section">
+     <div class="container-fluid relative">
          <div class="row">
+            <!-- Sidebar -->
+            <div class="col-sm-4 col-md-3 sidebar">
+                <!-- Widget -->
+                <div class="widget">
+                    <h5 class="widget-title font-alt">
+                        {{'Categorias'|_}}
+                    </h5>
+                    <div class="widget-body">
+                        <ul class="clearlist widget-menu">
+                            <li>
+                                <a {% if this.page.BaseFileName == 'listagem_produtos' %} class="active" {% endif %} href="{{'listagem_produtos'|page}}">{{'Todos'|_}} </a>
+                            </li>
+                        </ul>
+                        
+                        {% for category in categories %}
+                            <!-- Slug Page URL -->
+                            {% set category_slug = category.slug %}
+                            <!---->
+                            <ul class="clearlist widget-menu">
+                                <li>
+                                    <a {% if this.param.slug == category_slug %} class="active" {% endif %} href="{{'listagem_produtos_category'|page({slug: category.slug})}}" title="">
+                                        {{category.name|_}}
+                                    </a>
+                                </li>
+                                {% for subcategory in category.subcategories %}
+                                {% set subcategory_slug = subcategory.slug %}
+                                    <ul style="padding-left: 20px;">
+                                        <li>
+                                            <a {% if this.param.slug == subcategory_slug %} class="active" {% endif %} href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
+                                                {{subcategory.name|_}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- End Widget -->
+            </div>
+            <!-- End Sidebar -->
 
              <!-- Content -->
-             <div class="col-sm-12">
+             <div style="margin-top: 46px;" class="col-sm-8 col-md-9">
 
                  <div class="row multi-columns-row">
 
                      <!-- Shop Item -->
-                    {% for product in catalog.getProducts %}
+                    {% for product in products %}
                         {% partial 'site/item_card' product = product %}
                     {% endfor %}
                      <!-- End Shop Item -->
 
                  </div>
-                 {% if false %}
-                 <!-- Pagination -->
-                 <div class="pagination">
-                     <a href=""><i class="fa fa-angle-left"></i></a>
-                     <a href="" class="active">1</a>
-                     <a href="">2</a>
-                     <a href="">3</a>
-                     <a class="no-active">...</a>
-                     <a href="">9</a>
-                     <a href=""><i class="fa fa-angle-right"></i></a>
-                 </div>
-                 <!-- End Pagination -->
-                 {% endif %}
-
              </div>
              <!-- End Content -->
-
-
          </div>
-
      </div>
  </section>
  <!-- End Section -->
