@@ -1,59 +1,17 @@
+[catalog]
+category = {{:slug}}
+
+==
 <style>
-    .main-nav .dropdown_lingua {
-        height: 75px !important;
-        background-color: transparent !important;
-        border: 0;
-        background-image: none !important;
-        border-radius: 0;
-        box-shadow: none;
-        color: rgba(255, 255, 255, .7) !important;
-        font-size: 11px;
-        outline: none !important;
-        letter-spacing: 2px;
-        -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-        -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-        -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-        -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-        transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-        text-shadow: none;
-        text-transform: uppercase;
-    }
+  .activeLocalebox .mn-sub {
+    width: 46px;
+    text-align: center;
+  }
 
-    .main-nav.small-height .dropdown_lingua {
-        height: 55px !important;
-    }
-
-    .dropdown-menu_lingua {
-        left: auto;
-        right: 0;
-        border-radius: 0;
-        width: auto;
-        min-width: auto;
-        padding: 0;
-        background-color: transparent;
-    }
-
-    .dropdown-menu_lingua li {
-        margin: 0 0 3px 0 !important;
-        width: 100%;
-        background-color: #b2b2b2;
-    }
-
-    .dropdown-menu_lingua li:last-child {
-        margin: 0 0 0 0 !important;
-    }
-
-    .dropdown-menu_lingua li:hover {
-        background-color: #0033cc !important;
-    }
-
-    .main-nav.dark .dropdown-menu_lingua li a {
-        background-color: transparent !important;
-        background-image: none !important;
-        margin: 0 3px;
-        height: 28px !important;
-        line-height: 24px !important;
-    }
+  .activeLocalebox .mn-sub a {
+    text-align: center;
+    text-transform: uppercase !important;
+  }
     
 </style>
 
@@ -102,17 +60,43 @@
                         {{'Sobre'|_}}
                     </a>
                 </li>
-                <li>
-                    <a href="
-                            {% if this.page.BaseFileName == 'home' %} 
-                                #bestsellers 
-                            {% else %} 
-                                {{'home'|page}}#bestsellers 
-                            {% endif %}
-                        ">
-                        {{'Produtos'|_}}
-                    </a>
-                </li>
+                
+                    <li>
+                        <a href="
+                                {% if this.page.BaseFileName == 'home' %} 
+                                    #bestsellers 
+                                {% else %} 
+                                    {{'home'|page}}#bestsellers 
+                                {% endif %}
+                            " class="mn-has-sub">{{'Produtos'|_}} <i class="fa fa-angle-down">
+
+                            </i>
+                        </a>
+                        
+                        <!-- Sub -->
+                        <ul class="mn-sub">
+                            {% for category in categories %}
+                                <li>
+                                    <a href="{{'listagem_produtos_category'|page({slug: category.slug})}}" class="mn-has-sub">
+                                        {{category.name}} 
+                                    </a>
+                                </li>
+                                {% for subcategory in category.subcategories %}
+                                    <li>
+                                        
+                                        <a href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
+                                            <i style="padding-right: 5px;" class="fa fa-angle-right"></i>
+                                            {{subcategory.name}}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                
+                            {% endfor %}
+                        </ul>
+                        <!-- End Sub -->
+                        
+                    </li>
+                
                 <li>
                     <a href="
                             {% if this.page.BaseFileName == 'home' %} 
@@ -136,21 +120,23 @@
                     </a>
                 </li>
 
-                <li>
-                    <button class="btn btn-default dropdown-toggle dropdown_lingua" type="button"
-                        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        {{activeLocale}}
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu_lingua" aria-labelledby="dropdownMenu1">
+                <li class="activeLocalebox">
+                    <a href="#" class="mn-has-sub">
+                        {{activeLocale}} 
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    
+                    <!-- Sub -->
+                    <ul class="mn-sub">
                         {% for code, name in locales %}
-                            <li>
+                            <li> 
                                 <a href="#" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
                                     {{ code }}
                                 </a>
                             </li>
                         {% endfor %}
                     </ul>
+                    <!-- End Sub -->
                 </li>
             </ul>
         </div>

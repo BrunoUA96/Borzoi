@@ -1,4 +1,4 @@
-<div class="col-md-4 col-lg-4 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
+<div class=" {% if this.page.BaseFileName == 'home' %} col-md-3 col-lg-3 {% else %} col-md-4 col-lg-4 {% endif %} mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
     <div class="post-prev-img">
         <a href="{{'product_page'|page({id: product.id})}}">
             <img src="{{ product.attachments.0.path }}" alt="" />
