@@ -45,6 +45,7 @@
                                     <ul style="padding-left: 20px;">
                                         <li>
                                             <a {% if this.param.slug == subcategory_slug %} class="active" {% endif %} href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
+                                                <i style="padding-right: 5px;" class="fa fa-angle-right"></i>
                                                 {{subcategory.name|_}}
                                             </a>
                                         </li>

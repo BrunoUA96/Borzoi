@@ -78,15 +78,15 @@ category = {{:slug}}
                             {% for category in categories %}
                                 <li>
                                     <a href="{{'listagem_produtos_category'|page({slug: category.slug})}}" class="mn-has-sub">
-                                        {{category.name}} 
+                                        {{category.name|_}} 
                                     </a>
                                 </li>
                                 {% for subcategory in category.subcategories %}
-                                    <li>
+                                    <li style="padding-left: 15px;">
                                         
                                         <a href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
                                             <i style="padding-right: 5px;" class="fa fa-angle-right"></i>
-                                            {{subcategory.name}}
+                                            {{subcategory.name|_}}
                                         </a>
                                     </li>
                                 {% endfor %}
