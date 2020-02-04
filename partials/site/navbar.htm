@@ -3,16 +3,21 @@ category = {{:slug}}
 
 ==
 <style>
-  .activeLocalebox .mn-sub {
-    width: 46px;
-    text-align: center;
-  }
+    .activeLocalebox .mn-sub {
+        width: 46px;
+        text-align: center;
+    }
 
-  .activeLocalebox .mn-sub a {
-    text-align: center;
-    text-transform: uppercase !important;
-  }
-    
+    .activeLocalebox .mn-sub a {
+        text-align: center;
+        text-transform: uppercase !important;
+    }
+    .mn-sub_prod {
+        position: relative;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
 </style>
 
 <!-- Nav -->
@@ -80,17 +85,19 @@ category = {{:slug}}
                                     <a href="{{'listagem_produtos_category'|page({slug: category.slug})}}" class="mn-has-sub">
                                         {{category.name|_}} 
                                     </a>
+                                    <ul class="mn-sub mn-sub_prod">
+                                        {% if category.subcategories|length > 0 %}
+                                            {% for subcategory in category.subcategories %}
+                                                <li style="padding-left: 15px;">
+                                                    <a href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
+                                                        <i style="padding-right: 5px;" class="fa fa-angle-right"></i>
+                                                        {{subcategory.name|_}}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ul>
                                 </li>
-                                {% for subcategory in category.subcategories %}
-                                    <li style="padding-left: 15px;">
-                                        
-                                        <a href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
-                                            <i style="padding-right: 5px;" class="fa fa-angle-right"></i>
-                                            {{subcategory.name|_}}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                                
                             {% endfor %}
                         </ul>
                         <!-- End Sub -->
