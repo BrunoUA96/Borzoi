@@ -77,7 +77,7 @@ category = {{:slug}}
                                     <ul class="mn-sub mn-sub_prod">
                                         {% if category.subcategories|length > 0 %}
                                             {% for subcategory in category.subcategories %}
-                                                <li style="padding-left: 15px;">
+                                                <li>
                                                     <a href="{{'listagem_produtos_category'|page({slug: subcategory.slug})}}">
                                                         <i style="padding-right: 5px;" class="fa fa-angle-right"></i>
                                                         {{subcategory.name|_}}
